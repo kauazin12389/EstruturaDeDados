@@ -1,4 +1,4 @@
-public class InicializaVetorManual {
+public class Ex1 {
     public static void main(String[] args) {
         final int TAMANHO = 100;
         int[] vetor = new int[TAMANHO];
