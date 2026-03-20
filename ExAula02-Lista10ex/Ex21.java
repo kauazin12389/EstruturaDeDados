@@ -21,6 +21,6 @@ public class Ex21 {
             int resultado = calcularFatorial(numero);
             System.out.println("O fatorial de " + numero + " é " + resultado);
         }
-
-    }
+    leitor.close();
+    } 
 }

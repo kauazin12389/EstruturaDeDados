@@ -19,5 +19,6 @@ public class Ex22 {
         else{
             System.out.println("O " +n+ "° elmento é :" +fibonacci(n));
         }
+         leitor.close();
     }
 }
