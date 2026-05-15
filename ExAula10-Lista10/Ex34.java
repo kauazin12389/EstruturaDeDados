@@ -12,10 +12,15 @@ public class Ex34 {
         if (atual == null) {
             No34 novo = new No34();
             novo.item = valor;
+            novo.esq = null;
+            novo.dir = null;
             return novo;
         }
-        if (valor < atual.item) atual.esq = inserir(atual.esq, valor);
-        else atual.dir = inserir(atual.dir, valor);
+        if (valor < atual.item) {
+            atual.esq = inserir(atual.esq, valor);
+        } else {
+            atual.dir = inserir(atual.dir, valor);
+        }
         return atual;
     }
 
@@ -28,19 +33,12 @@ public class Ex34 {
         }
     }
 
-    static boolean buscar(No34 atual, int valor) {
-        if (atual == null) return false;
-        if (atual.item == valor) return true;
-        if (valor < atual.item) return buscar(atual.esq, valor);
-        return buscar(atual.dir, valor);
-    }
-
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         char op = ' ';
         while (op != 'D') {
-            System.out.println("\nA-Inserir\nB-Apresentar\nC-Buscar\nD-Sair");
-            System.out.print("Opção: ");
+            System.out.println("\nA-Inserir\nB-Apresentar\nC-Buscar (Nao implementado)\nD-Sair");
+            System.out.print("Opcao: ");
             op = leitor.next().toUpperCase().charAt(0);
 
             if (op == 'A') {
@@ -49,10 +47,9 @@ public class Ex34 {
             } else if (op == 'B') {
                 exibirArvore(raiz, 0);
             } else if (op == 'C') {
-                System.out.print("Valor para busca: ");
-                int v = leitor.nextInt();
-                if (buscar(raiz, v)) System.out.println("Nó encontrado");
-                else System.out.println("Nó não encontrado");
+                System.out.println("");
+            } else if (op == 'D'){
+                System.out.println("");
             }
         }
         leitor.close();

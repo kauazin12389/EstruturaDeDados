@@ -19,23 +19,21 @@ public class Ex33 {
         return atual;
     }
 
-    static void exibirArvore(No33 atual, int nivel) {
+    static void exibirVisual(No33 atual, int nivel) {
         if (atual != null) {
-            exibirArvore(atual.dir, nivel + 1);
+            exibirVisual(atual.dir, nivel + 1);
             for (int i = 0; i < nivel; i++) System.out.print("   ");
             System.out.println(atual.item);
-            exibirArvore(atual.esq, nivel + 1);
+            exibirVisual(atual.esq, nivel + 1);
         }
     }
 
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        System.out.println("Digite os 7 valores (Pré-Ordenado):");
         for (int i = 0; i < 7; i++) {
             raiz = inserir(raiz, leitor.nextInt());
         }
-        System.out.println("Estrutura da Arvore:");
-        exibirArvore(raiz, 0);
+        exibirVisual(raiz, 0);
         leitor.close();
     }
 }

@@ -29,11 +29,10 @@ public class Ex32 {
 
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        System.out.println("Digite os 7 valores (Pré-Ordenado):");
         for (int i = 0; i < 7; i++) {
             raiz = inserir(raiz, leitor.nextInt());
         }
-        System.out.print("Apresentacao (Pós-Ordenado): ");
+        System.out.print("Apresentacao (Pos-Ordenado): ");
         exibirPosOrdenado(raiz);
         System.out.println();
         leitor.close();

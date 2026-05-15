@@ -12,10 +12,15 @@ public class Ex30 {
         if (atual == null) {
             No30 novo = new No30();
             novo.item = valor;
+            novo.esq = null;
+            novo.dir = null;
             return novo;
         }
-        if (valor < atual.item) atual.esq = inserir(atual.esq, valor);
-        else atual.dir = inserir(atual.dir, valor);
+        if (valor < atual.item) {
+            atual.esq = inserir(atual.esq, valor);
+        } else {
+            atual.dir = inserir(atual.dir, valor);
+        }
         return atual;
     }
 
@@ -29,13 +34,11 @@ public class Ex30 {
 
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        System.out.print("Digite a quantidade de nós: ");
-        int n = leitor.nextInt();
-        for (int i = 0; i < n; i++) {
-            System.out.print("Valor: ");
+        for (int i = 0; i < 7; i++) {
+            System.out.print("Digite o valor: ");
             raiz = inserir(raiz, leitor.nextInt());
         }
-        System.out.print("Ordenado: ");
+        System.out.print("Apresentacao (Ordenado): ");
         exibirOrdenado(raiz);
         System.out.println();
         leitor.close();
