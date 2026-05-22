@@ -8,13 +8,13 @@ class No36 {
 public class Ex36 {
     static No36[] tabela = new No36[10];
 
-    static int funcaoHash(String nome) {
+    static int funcHash(String nome) {
         int chave = nome.length();
         return chave % 10;
     }
 
     static void inserir(String nome) {
-        int posicao = funcaoHash(nome);
+        int posicao = funcHash(nome);
         No36 novo = new No36();
         novo.nome = nome;
         novo.proximo = null;
